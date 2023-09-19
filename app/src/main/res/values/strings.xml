@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CrazyProducts</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="product_image">Product image</string>
+    <string name="price">%d$</string>
+    <string name="toggle_favorite">Favorite</string>
+    <string name="rating">%f/5</string>
+    <string name="search">Search</string>
+    <string name="navigate_to_favorite_screen">To Favorite Screen</string>
+    <string name="something_wrong">Something wrong</string>
+    <string name="empty_data">Empty data</string>
+</resources>

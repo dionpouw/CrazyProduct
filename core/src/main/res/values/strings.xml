@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="product_image">Product image</string>
+    <string name="product_price">%d$</string>
+    <string name="product_rating">%f.1/5</string>
+    <string name="favorite_state">Favorite state</string>
+</resources>

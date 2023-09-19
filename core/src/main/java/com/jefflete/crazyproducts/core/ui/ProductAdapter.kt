@@ -3,11 +3,13 @@ package com.jefflete.crazyproducts.core.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.jefflete.crazyproducts.core.R
 import com.jefflete.crazyproducts.core.databinding.ItemListProductBinding
 import com.jefflete.crazyproducts.core.domain.model.Product
+import com.jefflete.crazyproducts.core.utils.ProductDiffCallback
 
 class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ListViewHolder>() {
 
@@ -16,9 +18,11 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ListViewHolder>() {
 
     fun setData(newListData: List<Product>?) {
         if (newListData == null) return
+        val diffUtil = ProductDiffCallback(listData, newListData)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
         listData.clear()
         listData.addAll(newListData)
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ListViewHolder(
